@@ -1,0 +1,54 @@
+server:
+  port: 8081
+  host: "0.0.0.0"
+  readTimeout: 5s
+  writeTimeout: 10s
+
+dataSources:
+  kdrama:
+    enabled: true
+    updateInterval: 1h
+    batchSize: 100
+    endpoints:
+      - name: "myDramaList"
+        url: "https://api.mydramalist.com/v1"
+        timeout: 30s
+
+  games:
+    enabled: true
+    updateInterval: 1h
+    batchSize: 100
+    endpoints:
+      - name: "IGDB"
+        url: "https://api.igdb.com/v4"
+        timeout: 30s
+
+  music:
+    enabled: true
+    updateInterval: 1h
+    batchSize: 100
+    endpoints:
+      - name: "LastFM"
+        url: "https://ws.audioscrobbler.com/2.0"
+        timeout: 30s
+
+database:
+  host: "localhost"
+  port: 5432
+  name: "krec_hub"
+  user: "krec_user"
+  maxConnections: 20
+  timeout: 5s
+
+cache:
+  enabled: true
+  ttl: 1h
+  size: 1000
+
+logging:
+  level: "info"
+  format: "json"
+
+metrics:
+  enabled: true
+  path: "/metrics"

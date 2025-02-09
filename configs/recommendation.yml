@@ -1,0 +1,19 @@
+# Tweaked based on my own drama/game watching habits!
+
+server:
+  port: 8080
+  host: "0.0.0.0"
+  timeouts:
+    read: 5s
+    write: 10s
+
+recommendations:
+  # How many shows/games to return by default
+  defaultLimit: 10
+
+  # Minimum score to consider something "liked" (using MDL/MAL 10-point scale)
+  minPositiveRating: 7.0
+
+  # Weights for different factors
+  weights:
+    genres: 0.6

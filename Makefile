@@ -1,6 +1,6 @@
 .PHONY: all build test clean docker-build docker-push
 
-# go params
+# go params6
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
